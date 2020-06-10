@@ -774,7 +774,6 @@ input[type="radio"] + label:before {
 @media screen and (max-width: 980px) {
 
 	.gallery {
-		padding: 2em;
 		min-height: 20em;
 	}
 
@@ -787,7 +786,6 @@ input[type="radio"] + label:before {
 @media screen and (max-width: 480px) {
 
 	.gallery {
-		padding: 1em;
 	}
 
 }

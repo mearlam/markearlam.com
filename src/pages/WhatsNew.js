@@ -19,9 +19,6 @@ function WhatsNew(props) {
                 <div className="inner">
                     <h1>Mark Earlam</h1>
                     <p>Acrylic landscape paintings</p>
-                    <ul className="actions">
-                        <li><a href="#galleries" className="button alt scrolly big">Continue</a></li>
-                    </ul>
                 </div>
             </section>
 
