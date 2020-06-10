@@ -1,7 +1,4 @@
-import React, {useRef, useState} from "react";
-import Button from "react-bootstrap/Button";
-import Overlay from "react-bootstrap/Overlay";
-import Modal from "react-bootstrap/Modal";
+import React, {useState} from "react";
 import PicturePopup from "../components/PicturePopup";
 
 const images = ({
@@ -50,7 +47,7 @@ function Gallery(props) {
                     <div className="content">
                         {
                             images({
-                                thumbnails: ['01', '05', '09', '02', '06', '10', '03', '07'],
+                                thumbnails: ['11', '12', '13', '14', '01', '05', '09', '02', '06', '10', '03', '07'],
                                 setShow,
                                 setThumbnail,
                             })

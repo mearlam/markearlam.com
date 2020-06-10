@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import thumb1 from '../images/thumbs/01.jpg';
-import thumb2 from '../images/thumbs/05.jpg';
-import thumb3 from '../images/thumbs/09.jpg';
-import thumb4 from '../images/thumbs/02.jpg';
+import thumb1 from '../images/thumbs/11.jpg';
+import thumb2 from '../images/thumbs/12.jpg';
+import thumb3 from '../images/thumbs/13.jpg';
+import thumb4 from '../images/thumbs/14.jpg';
 import PicturePopup from "../components/PicturePopup";
 import {Link} from "react-router-dom";
 
@@ -35,7 +35,7 @@ function WhatsNew(props) {
                         <div className="media">
                             <a onClick={() => {
                                 setShow(true);
-                                setThumbnail('01');
+                                setThumbnail('11');
                             }
                             }><img src={thumb1} alt=""
                                    title="This right here is a caption."/></a>
@@ -43,7 +43,7 @@ function WhatsNew(props) {
                         <div className="media">
                             <a onClick={() => {
                                 setShow(true);
-                                setThumbnail('05');
+                                setThumbnail('12');
                             }
                             }><img src={thumb2} alt=""
                                    title="This right here is a caption."/></a>
@@ -51,7 +51,7 @@ function WhatsNew(props) {
                         <div className="media">
                             <a onClick={() => {
                                 setShow(true);
-                                setThumbnail('09');
+                                setThumbnail('13');
                             }
                             }><img src={thumb3} alt=""
                                    title="This right here is a caption."/></a>
@@ -59,7 +59,7 @@ function WhatsNew(props) {
                         <div className="media">
                             <a onClick={() => {
                                 setShow(true);
-                                setThumbnail('02');
+                                setThumbnail('14');
                             }
                             }><img src={thumb4} alt=""
                                    title="This right here is a caption."/></a>

@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Overlay from "react-bootstrap/Overlay";
 import Modal from "react-bootstrap/Modal";
 import PicturePopup from "../components/PicturePopup";
+import {Col, Row} from "react-bootstrap";
 
 
 function Stuff(props) {
@@ -42,65 +43,82 @@ function Stuff(props) {
                             set out your paints and they stay wet for weeks, this is very convenient.
                         </div>
                         <h2>Brushes</h2>
-                        <div className="description">
-                            No brush will improve your paintings. I used to think if I buy a better brush then I will
-                            get better results. Unfortunately it does not work that way and all you really need is
-                            the right brush for the situation.
+                      <Row>
+                          <Col xs={12} sm={12} lg={6}  xl={6}>
+                              <div className="description">
+                                  No brush will improve your paintings. I used to think if I buy a better brush then I will
+                                  get better results. Unfortunately it does not work that way and all you really need is
+                                  the right brush for the situation.
 
-                            For example, blocking in colours you need a tough hog brush. Small details you use
-                            a soft synthetic brush. It is not really complicated and use whatever brush you like
-                            really. Also, ignore what they tell you the brush is for. I use oil and watercolour
-                            brushes all of the time for acrylic painting.
-                        </div>
-                        <div className="description">
-                            The main brushes I use are <b>Daler Rowney Georgian Long Flat oil brushes</b> that are
-                            pretty tough.
-                            I have various sizes but you can use
-                            whatever you choose. It depends how big you will paint but something like 2,6 and 8 will do.
-                            Try and
-                            use the biggest brush you can.
-                        </div>
-                        <div>
-                            <img width="25%" src={require(`../images/stuff/hog-brushes.jpg`)}/>
-                        </div>
-                        <div className="description">
-                            You will also need synthetic brushes for detailing things like buildings. I use
-                            <b> Daler Rowney system 3 flat</b> but almost anything like that will do. Get some small
-                            ones and bigger ones for large areas.
-                        </div>
-                        <div>
-                            <img width="25%" src={require(`../images/stuff/flat.jpg`)}/>
-                        </div>
-                        <div className="description">
-                            For very fine work you will need a script or liner brush. These are long and thin. I use
-                            whichever one I can find. The longer the better as it will hold more paint.
-                        </div>
-                        <div>
-                            <img width="25%" src={require(`../images/stuff/script.jpg`)}/>
-                        </div>
+                                  For example, blocking in colours you need a tough hog brush. Small details you use
+                                  a soft synthetic brush. It is not really complicated and use whatever brush you like
+                                  really. Also, ignore what they tell you the brush is for. I use oil and watercolour
+                                  brushes all of the time for acrylic painting.
+                              </div>
+                              <div className="description">
+                                  The main brushes I use are <b>Daler Rowney Georgian Long Flat oil brushes</b> that are
+                                  pretty tough.
+                                  I have various sizes but you can use
+                                  whatever you choose. It depends how big you will paint but something like 2,6 and 8 will do.
+                                  Try and
+                                  use the biggest brush you can.
+                              </div>
+                              <div>
+                                  <img width="25%" src={require(`../images/stuff/hog-brushes.jpg`)}/>
+                              </div>
+                          </Col>
+                          <Col xs={12} sm={12} lg={6}  xl={6}>
+                              <div className="description">
+                                  You will also need synthetic brushes for detailing things like buildings. I use
+                                  <b> Daler Rowney system 3 flat</b> but almost anything like that will do. Get some small
+                                  ones and bigger ones for large areas.
+                              </div>
+                              <div>
+                                  <img width="25%" src={require(`../images/stuff/flat.jpg`)}/>
+                              </div>
+                              <div className="description">
+                                  For very fine work you will need a script or liner brush. These are long and thin. I use
+                                  whichever one I can find. The longer the better as it will hold more paint.
+                              </div>
+                              <div>
+                                  <img width="25%" src={require(`../images/stuff/script.jpg`)}/>
+                              </div>
+                          </Col>
+                      </Row>
+
                         <h2>Paint</h2>
-                        <div className="description">
-                            I only use <b> Liquitex Professional Acrylic Artist Colour Heavy Body</b> for everything I
-                            do. Note that I do not use the white of this paint, see below for what white I use.
-                            Colour list:
-                            <ul>
-                                <li>Hooker’s Green Deep Hue Permanent</li>
-                                <li>Burnt Umber</li>
-                                <li>Vivid Lime Green</li>
-                                <li>Turquoise Deep</li>
-                                <li>Ultramarine Blue Red Shade</li>
-                                <li>Dioxazine Purple</li>
-                                <li>Cadmium Yellow Light</li>
-                                <li>Burnt Sienna</li>
-                                <li>Cadmium red light</li>
-                                <li>Cadmium orange</li>
-                                <li>Alizarin crimson</li>
-                                <li>Cadmium yellow light</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <img width="25%" src={require(`../images/stuff/paint.jpg`)}/>
-                        </div>
+                        <Row>
+                            <Col xs={3} sm={3} lg={3}  xl={3}>
+                                <div>
+                                    <img width="75%" src={require(`../images/stuff/paint.jpg`)}/>
+                                </div>
+                            </Col>
+                            <Col xs={12} sm={12} lg={6}  xl={6}>
+                                <div className="description">
+                                    I only use <b> Liquitex Professional Acrylic Artist Colour Heavy Body</b> for everything I
+                                    do. Note that I do not use the white of this paint, see below for what white I use.
+                                    Colour list:
+                                    <ul>
+                                        <li>Hooker’s Green Deep Hue Permanent</li>
+                                        <li>Burnt Umber</li>
+                                        <li>Vivid Lime Green</li>
+                                        <li>Turquoise Deep</li>
+                                        <li>Ultramarine Blue Red Shade</li>
+                                        <li>Dioxazine Purple</li>
+                                        <li>Cadmium Yellow Light</li>
+                                        <li>Burnt Sienna</li>
+                                        <li>Cadmium red light</li>
+                                        <li>Cadmium orange</li>
+                                        <li>Alizarin crimson</li>
+                                        <li>Cadmium yellow light</li>
+                                    </ul>
+                                </div>
+                            </Col>
+                        </Row>
+
+
+
+
                         <h3>Gesso for white</h3>
                         <div className="description">
                             You will use a huge amount of white when painting and it works best for me to use the

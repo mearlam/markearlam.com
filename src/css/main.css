@@ -767,6 +767,10 @@ input[type="radio"] + label:before {
 	margin-top: 0.5em;
 }
 
+.stuff h4 {
+	margin-top: 0.5em;
+}
+
 @media screen and (max-width: 980px) {
 
 	.gallery {

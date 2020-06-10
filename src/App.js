@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import WhatsNew from "./pages/WhatsNew";
 import Gallery from "./pages/Gallery";
 import Stuff from "./pages/Stuff";
+import Learning from "./pages/Learning";
 import Contact from "./components/Contact";
 import {Container, Navbar, Row} from 'react-bootstrap';
 
@@ -31,6 +32,9 @@ function App() {
                     <Navbar.Brand>
                         <Link to="/stuff"><span title="Stuff used to paint" className="icon fa-paint-brush"/></Link>
                     </Navbar.Brand>
+                    <Navbar.Brand>
+                        <Link to="/learning"><span title="How I paint" className="icon fa-book"/></Link>
+                    </Navbar.Brand>
                 </Navbar>
                 <Row>
 
@@ -41,6 +45,7 @@ function App() {
                             <Route exact path="/" component={WhatsNew}/>
                             <Route path="/gallery" component={Gallery}/>
                             <Route path="/stuff" component={Stuff}/>
+                            <Route path="/learning" component={Learning}/>
                         </switch>
                     </section>
 
