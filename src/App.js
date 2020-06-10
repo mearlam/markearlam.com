@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Link, Route} from "react-router-dom";
+import {HashRouter , Link, Route} from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WhatsNew from "./pages/WhatsNew";
@@ -20,7 +20,7 @@ const ScrollToTop = () => {
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Container fluid={true}>
                 <Navbar id="nav" bg="dark" fixed="top">
                     <Navbar.Brand>
@@ -57,7 +57,7 @@ function App() {
                     <span className="copyright">&copy; Mark Earlam.</span>
                 </Row>
             </Container>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
