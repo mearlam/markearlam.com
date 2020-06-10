@@ -753,6 +753,20 @@ input[type="radio"] + label:before {
 	min-height: 37em;
 }
 
+.stuff {
+	padding: 3.5em;
+	position: relative;
+	overflow: hidden;
+}
+
+.stuff .description{
+	margin-bottom: 1em;
+}
+
+.stuff h2 {
+	margin-top: 0.5em;
+}
+
 @media screen and (max-width: 980px) {
 
 	.gallery {

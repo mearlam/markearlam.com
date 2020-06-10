@@ -4,6 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WhatsNew from "./pages/WhatsNew";
 import Gallery from "./pages/Gallery";
+import Stuff from "./pages/Stuff";
 import Contact from "./components/Contact";
 import {Container, Navbar, Row} from 'react-bootstrap';
 
@@ -22,10 +23,13 @@ function App() {
             <Container fluid={true}>
                 <Navbar id="nav" bg="dark" fixed="top">
                     <Navbar.Brand>
-                        <Link to="/" className="active"><span className="icon fa-home"/></Link>
+                        <Link to="/" className="active"><span title="Home" className="icon fa-home"/></Link>
                     </Navbar.Brand>
                     <Navbar.Brand>
-                        <Link to="/gallery"><span className="icon fa-camera-retro"/></Link>
+                        <Link to="/gallery"><span title="Gallery" className="icon fa-camera-retro"/></Link>
+                    </Navbar.Brand>
+                    <Navbar.Brand>
+                        <Link to="/stuff"><span title="Stuff used to paint" className="icon fa-paint-brush"/></Link>
                     </Navbar.Brand>
                 </Navbar>
                 <Row>
@@ -36,6 +40,7 @@ function App() {
                             <Route component={ScrollToTop} />
                             <Route exact path="/" component={WhatsNew}/>
                             <Route path="/gallery" component={Gallery}/>
+                            <Route path="/stuff" component={Stuff}/>
                         </switch>
                     </section>
 
