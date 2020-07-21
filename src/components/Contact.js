@@ -5,10 +5,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Contact(props) {
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [message, setMessage] = useState();
-    const [captcha, setCaptcha] = useState();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [captcha, setCaptcha] = useState('');
 
     const handleCaptureUpdate = (value) => {
         setCaptcha(value);
@@ -24,6 +24,10 @@ function Contact(props) {
             });
             if(success) {
                 toast.success("Message sent, thank you for getting in touch");
+                setName('');
+                setEmail('');
+                setMessage('');
+                setCaptcha('');
             }else {
                 toast.error("Message could not be sent, please try again");
             }
@@ -56,18 +60,21 @@ function Contact(props) {
                 <div className="field half first">
                     <label htmlFor="name">Name</label>
                     <input name="name" id="name" type="text"
+                           value={name}
                            onChange={event => setName(event.target.value)}
                            placeholder="Name" required="required"/>
                 </div>
                 <div className="field half">
                     <label htmlFor="email">Email</label>
                     <input name="email" id="email" type="email"
+                           value={email}
                            onChange={event => setEmail(event.target.value)}
                            placeholder="Email" required="required"/>
                 </div>
                 <div className="field">
                     <label htmlFor="message">Message</label>
                     <textarea name="message" id="message" rows="6" placeholder="Message"
+                              value={message}
                               onChange={event => setMessage(event.target.value)}
                               required="required"/>
                 </div>
