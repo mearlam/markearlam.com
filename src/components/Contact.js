@@ -4,6 +4,8 @@ import {getInTouch} from '../network/apiCalls';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const recaptchaRef = React.createRef();
+
 function Contact(props) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -28,6 +30,7 @@ function Contact(props) {
                 setEmail('');
                 setMessage('');
                 setCaptcha('');
+                recaptchaRef.current.reset();
             }else {
                 toast.error("Message could not be sent, please try again");
             }
@@ -84,6 +87,7 @@ function Contact(props) {
                         <ReCAPTCHA
                             sitekey="6LfD9PkUAAAAAIORBI8maK15sZiMMGnydDEUMPIw"
                             onChange={handleCaptureUpdate}
+                            ref={recaptchaRef}
                         />
                     </li>
                 </ul>
