@@ -1,8 +1,38 @@
-import React from "react";
+import React, {useState} from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import {getInTouch} from '../network/apiCalls';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Contact(props) {
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [message, setMessage] = useState();
+    const [captcha, setCaptcha] = useState();
+
+    const handleCaptureUpdate = (value) => {
+        setCaptcha(value);
+    };
+
+    const handleSubmit = async () => {
+        if(name && email && message && captcha) {
+            const success = await getInTouch({
+                name,
+                email,
+                message,
+                captcha,
+            });
+            if(success) {
+                toast.success("Message sent, thank you for getting in touch");
+            }else {
+                toast.error("Message could not be sent, please try again");
+            }
+        }
+    };
+
     return (
         <section id="contact">
+            <ToastContainer />
             <div className="social column">
                 <h3>About Me</h3>
                 <p>I started learning to paint acrylics in late 2018. I am mainly interested in painting landscapes but
@@ -23,29 +53,33 @@ function Contact(props) {
 
             <div className="column">
                 <h3>Get in Touch</h3>
-                <form action="#" method="post">
-                    <div className="field half first">
-                        <label htmlFor="name">Name</label>
-                        <input name="name" id="name" type="text" placeholder="Name" required="required"/>
-                    </div>
-                    <div className="field half">
-                        <label htmlFor="email">Email</label>
-                        <input name="email" id="email" type="email" placeholder="Email" required="required"/>
-                    </div>
-                    <div className="field">
-                        <label htmlFor="message">Message</label>
-                        <textarea name="message" id="message" rows="6" placeholder="Message"
-                                  required="required"/>
-                    </div>
-                    <ul className="actions">
-                        <li><input id="submit" value="Send Message" className="button"
-                                   disabled={true}
-                                   type="submit"/></li>
-                        <li>
-                            <div className="g-recaptcha" data-sitekey="6LfD9PkUAAAAAIORBI8maK15sZiMMGnydDEUMPIw"/>
-                        </li>
-                    </ul>
-                </form>
+                <div className="field half first">
+                    <label htmlFor="name">Name</label>
+                    <input name="name" id="name" type="text"
+                           onChange={event => setName(event.target.value)}
+                           placeholder="Name" required="required"/>
+                </div>
+                <div className="field half">
+                    <label htmlFor="email">Email</label>
+                    <input name="email" id="email" type="email"
+                           onChange={event => setEmail(event.target.value)}
+                           placeholder="Email" required="required"/>
+                </div>
+                <div className="field">
+                    <label htmlFor="message">Message</label>
+                    <textarea name="message" id="message" rows="6" placeholder="Message"
+                              onChange={event => setMessage(event.target.value)}
+                              required="required"/>
+                </div>
+                <ul className="actions">
+                    <li><button onClick={handleSubmit} value="Send Message" className="button">Send</button></li>
+                    <li>
+                        <ReCAPTCHA
+                            sitekey="6LfD9PkUAAAAAIORBI8maK15sZiMMGnydDEUMPIw"
+                            onChange={handleCaptureUpdate}
+                        />
+                    </li>
+                </ul>
                 <div id="form-response"/>
             </div>
         </section>
