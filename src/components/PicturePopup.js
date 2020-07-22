@@ -5,12 +5,17 @@ import Button from "react-bootstrap/Button";
 
 function PicturePopup(props) {
 
-    const {show, handleClose, thumbnail } = props;
+    const {show, handleClose, thumbnail, staticImage } = props;
 
     return (
         <Modal id="picture-popup" size="lg" show={show} onHide={handleClose}>
             <Modal.Body>
-                <img src={require(`../images/fulls/${thumbnail}.jpg`)}/>
+                {staticImage &&
+                <img src={`https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/${thumbnail}.jpg`}/>
+                }
+                {!staticImage &&
+                    <img src={require(`../images/fulls/${thumbnail}.jpg`)}/>
+                }
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>

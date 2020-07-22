@@ -32,33 +32,33 @@ function WhatsNew(props) {
                         <div className="media">
                             <a onClick={() => {
                                 setShow(true);
-                                setThumbnail('11');
+                                setThumbnail('4');
                             }
-                            }><img src={thumb1} alt=""
+                            }><img src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/4_thumb.jpg" alt=""
                                    title="This right here is a caption."/></a>
                         </div>
                         <div className="media">
                             <a onClick={() => {
                                 setShow(true);
-                                setThumbnail('12');
+                                setThumbnail('3');
                             }
-                            }><img src={thumb2} alt=""
+                            }><img src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/3_thumb.jpg" alt=""
                                    title="This right here is a caption."/></a>
                         </div>
                         <div className="media">
                             <a onClick={() => {
                                 setShow(true);
-                                setThumbnail('13');
+                                setThumbnail('2');
                             }
-                            }><img src={thumb3} alt=""
+                            }><img src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/2_thumb.jpg" alt=""
                                    title="This right here is a caption."/></a>
                         </div>
                         <div className="media">
                             <a onClick={() => {
                                 setShow(true);
-                                setThumbnail('14');
+                                setThumbnail('1');
                             }
-                            }><img src={thumb4} alt=""
+                            }><img src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/1_thumb.jpg" alt=""
                                    title="This right here is a caption."/></a>
                         </div>
                     </div>
@@ -72,6 +72,7 @@ function WhatsNew(props) {
                 show={show}
                 handleClose={handleClose}
                 thumbnail={thumbnail}
+                staticImage={true}
             />
 
         </div>
