@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import PicturePopup from "../components/PicturePopup";
 import {Link} from "react-router-dom";
-import {FacebookProvider, Like, Share} from "react-facebook";
 import {Col, Container, Row} from "react-bootstrap";
 import styled from 'styled-components';
 import {BigButton, ImagePreviewContainer, ImagePreview} from "../components/StyledComponents";
@@ -14,6 +13,7 @@ const Header = styled.header`
 const RowCentered = styled(Row)`
     justify-content: center;
     width: 100%;
+    margin-top: 1em;
 `;
 
 function WhatsNew(props) {
@@ -49,7 +49,6 @@ function WhatsNew(props) {
                                     alt=""
                                     title="This right here is a caption."/></a>
                             </ImagePreview>
-                            <Like href="https://www.markearlam.com" colorScheme="dark" showFaces share/>
                         </ImagePreviewContainer>
                     </Col>
                     <Col sm={6} md={6} lg={3} xl={3}>

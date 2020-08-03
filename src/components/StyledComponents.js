@@ -1,5 +1,26 @@
 import styled from "styled-components";
 
+export const AwesomeIcon = styled.div`
+         span {text-decoration: none;
+            border-bottom: none;
+            position: relative;
+            font-size: ${props => props.fontSize || "1em"};
+          }
+        
+        span:before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-transform: none !important;
+        }
+        
+        span > .label {
+            display: none;
+        }
+`;
+
 // put around an image for it to fade in on load
 export const ImagePreviewContainer = styled.div`
 	-moz-animation: gallery 0.75s ease-out 0.4s forwards;

@@ -3,6 +3,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import {getInTouch} from '../network/apiCalls';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {AwesomeIcon} from '../components/StyledComponents';
 
 const recaptchaRef = React.createRef();
 
@@ -51,10 +52,10 @@ function Contact(props) {
                 <h3>Follow Me</h3>
                 <ul className="icons">
                     {/*<li><a href="#" className="icon fa-twitter"><span className="label">Twitter</span></a></li>*/}
-                    <li><a href="https://www.facebook.com/Mark-Earlam-110034125732006"
-                           className="icon fa-facebook"><span className="label">Facebook</span></a></li>
-                    <li><a href="https://www.instagram.com/earlam.mark/" className="icon fa-instagram"><span
-                        className="label">Instagram</span></a></li>
+                    <li><a href="https://www.facebook.com/Mark-Earlam-110034125732006" target="_blank">
+                        <AwesomeIcon fontSize="2em"><span className="fa-facebook"/></AwesomeIcon></a></li>
+                    <li><a href="https://www.instagram.com/earlam.mark/" target="_blank">
+                        <AwesomeIcon fontSize="2em"><span className="fa-instagram"/></AwesomeIcon></a></li>
                 </ul>
             </div>
 

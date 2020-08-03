@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import Social from "./Social";
 
 function PicturePopup(props) {
 
@@ -16,6 +17,7 @@ function PicturePopup(props) {
                 {!staticImage &&
                     <img src={require(`../images/fulls/${thumbnail}.jpg`)}/>
                 }
+                <Social url={`https://www.markearlam.com/gallery/${thumbnail}`} />
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>

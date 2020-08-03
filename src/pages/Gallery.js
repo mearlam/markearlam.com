@@ -10,7 +10,7 @@ const images = ({
                     title = 'acrylic landscape painting',
                 }) => {
     return (
-        thumbnails.map((thumbnail, index) => {
+        thumbnails.map((thumbnail) => {
             return (<ImagePreviewContainer>
                 <ImagePreview>
                 <a onClick={() => {
@@ -28,12 +28,19 @@ const images = ({
 
 function Gallery(props) {
 
+    const { match: { params } } = props;
+
     const [show, setShow] = useState(false);
     const [thumbnail, setThumbnail] = useState('01');
 
     useEffect(() => {
         document.title = `Mark Earlam - Gallery`;
-    });
+
+        if(params.imageName) {
+            setShow(true);
+            setThumbnail(params.imageName);
+        }
+    }, [params]);
 
     const handleClose = () => setShow(false);
 

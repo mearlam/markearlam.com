@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, Link, Route} from "react-router-dom";
+import {BrowserRouter, Link, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WhatsNew from "./pages/WhatsNew";
 import Gallery from "./pages/Gallery";
@@ -10,7 +10,8 @@ import Privacy from "./pages/Privacy";
 import {Container, Navbar, Row} from 'react-bootstrap';
 import {FacebookProvider} from "react-facebook";
 import styled from 'styled-components';
-
+import {AwesomeIcon} from './components/StyledComponents';
+import Social from "./components/Social";
 /**
  * Without this when changing page the scrollbar stays wherever it was
  * on the last - not always at the top of course and it looks weird.
@@ -20,39 +21,12 @@ const ScrollToTop = () => {
     return null;
 };
 
-const NavbarLink = styled.div`
-         span {text-decoration: none;
-            border-bottom: none;
-            position: relative;
-          }
-        
-        span:before {
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-font-smoothing: antialiased;
-            font-family: FontAwesome;
-            font-style: normal;
-            font-weight: normal;
-            text-transform: none !important;
-        }
-        
-        span > .label {
-            display: none;
-        }
-`;
-
 const Footer = styled(Row)`
         padding: 4em 0 2em 0;
         background: #f2f2f2;
-     .copyright {
-        color: #bfbfbf;
-        font-size: 0.9em;
-        margin: 0 0 2em 0;
-        padding: 0 1em;
-        text-align: center;
-        display: block;
-        width: 100%;
-    }
-    
+            text-align: center;
+    display: block;
+    width: 100%;
     @media screen and (max-width: 736px) {
     
         #footer {
@@ -77,32 +51,42 @@ const MainSection = styled.section`
 }
 `;
 
+const Copyright = styled.span`
+    margin-top 1em;
+    color: #bfbfbf;
+    font-size: 0.9em;
+    margin: 0 0 2em 0;
+    padding: 0 1em;
+
+`;
+
 function App() {
+
     return (
-        <HashRouter>
+        <BrowserRouter>
             <FacebookProvider appId="871056593418954">
                 <Container fluid={true}>
                     <Navbar id="nav" bg="dark" fixed="top">
                         <Navbar.Brand>
-                            <NavbarLink>
+                            <AwesomeIcon>
                                 <Link to="/" className="active"><span title="Home" className="fa-home"/></Link>
-                            </NavbarLink>
+                            </AwesomeIcon>
                         </Navbar.Brand>
                         <Navbar.Brand>
-                            <NavbarLink>
+                            <AwesomeIcon>
                                 <Link to="/gallery"><span title="Gallery" className="fa-camera-retro"/></Link>
-                            </NavbarLink>
+                            </AwesomeIcon>
                         </Navbar.Brand>
                         <Navbar.Brand>
-                            <NavbarLink>
+                            <AwesomeIcon>
                                 <Link to="/stuff"><span title="Stuff used to paint"
                                                         className="fa-paint-brush"/></Link>
-                            </NavbarLink>
+                            </AwesomeIcon>
                         </Navbar.Brand>
                         <Navbar.Brand>
-                            <NavbarLink>
+                            <AwesomeIcon>
                                 <Link to="/learning"><span title="How I paint" className="fa-book"/></Link>
-                            </NavbarLink>
+                            </AwesomeIcon>
                         </Navbar.Brand>
                     </Navbar>
                     <Row>
@@ -112,6 +96,7 @@ function App() {
                             <switch>
                                 <Route component={ScrollToTop}/>
                                 <Route exact path="/" component={WhatsNew}/>
+                                <Route path="/gallery/:imageName" component={Gallery}/>
                                 <Route path="/gallery" component={Gallery}/>
                                 <Route path="/stuff" component={Stuff}/>
                                 <Route path="/learning" component={Learning}/>
@@ -123,12 +108,13 @@ function App() {
 
                     </Row>
                     <Footer>
-                        <span className="copyright">&copy; Mark Earlam.</span>
+                        <Social url='https://www.markearlam.com' />
+                        <Copyright>&copy; Mark Earlam.</Copyright>
                         <Link to="/privacy" className="active copyright">Privacy policy</Link>
                     </Footer>
                 </Container>
             </FacebookProvider>
-        </HashRouter>
+        </BrowserRouter>
     );
 }
 
