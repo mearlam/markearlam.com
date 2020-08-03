@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Button from "react-bootstrap/Button";
 import Overlay from "react-bootstrap/Overlay";
 import Modal from "react-bootstrap/Modal";
@@ -7,6 +7,9 @@ import PicturePopup from "../components/PicturePopup";
 
 function Learning(props) {
 
+    useEffect(() => {
+        document.title = `Mark Earlam - Learning`;
+    });
 
     return (
         <div>

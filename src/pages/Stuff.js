@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Button from "react-bootstrap/Button";
 import Overlay from "react-bootstrap/Overlay";
 import Modal from "react-bootstrap/Modal";
@@ -8,6 +8,9 @@ import {Col, Row} from "react-bootstrap";
 
 function Stuff(props) {
 
+    useEffect(() => {
+        document.title = `Mark Earlam - Stuff`;
+    });
 
     return (
         <div>

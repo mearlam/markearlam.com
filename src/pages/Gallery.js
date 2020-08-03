@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import PicturePopup from "../components/PicturePopup";
+import { ImagePreviewContainer, ImagePreview} from "../components/StyledComponents";
 
 const images = ({
                     thumbnails,
@@ -10,15 +11,16 @@ const images = ({
                 }) => {
     return (
         thumbnails.map((thumbnail, index) => {
-            return (<div className="media all people">
+            return (<ImagePreviewContainer>
+                <ImagePreview>
                 <a onClick={() => {
                     setShow(true);
                     setThumbnail(thumbnail);
                 }
                 }><img
                     src={require(`../images/thumbs/${thumbnail}.jpg`)} alt={alt}
-                    title={title}/></a>
-            </div>);
+                    title={title}/></a></ImagePreview>
+            </ImagePreviewContainer>);
         })
 
     );
@@ -28,6 +30,10 @@ function Gallery(props) {
 
     const [show, setShow] = useState(false);
     const [thumbnail, setThumbnail] = useState('01');
+
+    useEffect(() => {
+        document.title = `Mark Earlam - Gallery`;
+    });
 
     const handleClose = () => setShow(false);
 

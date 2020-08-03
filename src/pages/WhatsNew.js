@@ -1,10 +1,20 @@
 import React, {useState} from "react";
-import thumb1 from '../images/thumbs/11.jpg';
-import thumb2 from '../images/thumbs/12.jpg';
-import thumb3 from '../images/thumbs/13.jpg';
-import thumb4 from '../images/thumbs/14.jpg';
 import PicturePopup from "../components/PicturePopup";
 import {Link} from "react-router-dom";
+import {FacebookProvider, Like, Share} from "react-facebook";
+import {Col, Container, Row} from "react-bootstrap";
+import styled from 'styled-components';
+import {BigButton, ImagePreviewContainer, ImagePreview} from "../components/StyledComponents";
+
+const Header = styled.header`
+    text-align: center;
+    width: 100%;
+`;
+
+const RowCentered = styled(Row)`
+    justify-content: center;
+    width: 100%;
+`;
 
 function WhatsNew(props) {
 
@@ -22,51 +32,75 @@ function WhatsNew(props) {
                 </div>
             </section>
 
-            <section id="galleries">
-
-                <div className="gallery">
-                    <header className="special">
-                        <h2>What's New</h2>
-                    </header>
-                    <div className="content">
-                        <div className="media">
-                            <a onClick={() => {
-                                setShow(true);
-                                setThumbnail('4');
-                            }
-                            }><img src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/4_thumb.jpg" alt=""
-                                   title="This right here is a caption."/></a>
-                        </div>
-                        <div className="media">
-                            <a onClick={() => {
-                                setShow(true);
-                                setThumbnail('3');
-                            }
-                            }><img src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/3_thumb.jpg" alt=""
-                                   title="This right here is a caption."/></a>
-                        </div>
-                        <div className="media">
-                            <a onClick={() => {
-                                setShow(true);
-                                setThumbnail('2');
-                            }
-                            }><img src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/2_thumb.jpg" alt=""
-                                   title="This right here is a caption."/></a>
-                        </div>
-                        <div className="media">
-                            <a onClick={() => {
-                                setShow(true);
-                                setThumbnail('1');
-                            }
-                            }><img src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/1_thumb.jpg" alt=""
-                                   title="This right here is a caption."/></a>
-                        </div>
-                    </div>
-                    <footer>
-                        <Link to="/gallery" className="button big">Full Gallery</Link>
-                    </footer>
-                </div>
-            </section>
+            <Container fluid={true}>
+                <Row>
+                    <Header><h2>What's New</h2></Header>
+                </Row>
+                <Row>
+                    <Col sm={6} md={6} lg={3} xl={3}>
+                        <ImagePreviewContainer>
+                            <ImagePreview>
+                                <a onClick={() => {
+                                    setShow(true);
+                                    setThumbnail('4');
+                                }
+                                }><img
+                                    src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/4_thumb.jpg"
+                                    alt=""
+                                    title="This right here is a caption."/></a>
+                            </ImagePreview>
+                            <Like href="https://www.markearlam.com" colorScheme="dark" showFaces share/>
+                        </ImagePreviewContainer>
+                    </Col>
+                    <Col sm={6} md={6} lg={3} xl={3}>
+                        <ImagePreviewContainer>
+                            <ImagePreview>
+                                <a onClick={() => {
+                                    setShow(true);
+                                    setThumbnail('3');
+                                }
+                                }><img
+                                    src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/3_thumb.jpg"
+                                    alt=""
+                                    title="This right here is a caption."/></a>
+                            </ImagePreview>
+                        </ImagePreviewContainer>
+                    </Col>
+                    <Col sm={6} md={6} lg={3} xl={3}>
+                        <ImagePreviewContainer>
+                            <ImagePreview>
+                                <a onClick={() => {
+                                    setShow(true);
+                                    setThumbnail('2');
+                                }
+                                }><img
+                                    src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/2_thumb.jpg"
+                                    alt=""
+                                    title="This right here is a caption."/></a>
+                            </ImagePreview>
+                        </ImagePreviewContainer>
+                    </Col>
+                    <Col sm={6} md={6} lg={3} xl={3}>
+                        <ImagePreviewContainer>
+                            <ImagePreview>
+                                <a onClick={() => {
+                                    setShow(true);
+                                    setThumbnail('1');
+                                }
+                                }><img
+                                    src="https://s3-eu-west-1.amazonaws.com/static.markearlam.com/whatsnew/1_thumb.jpg"
+                                    alt=""
+                                    title="This right here is a caption."/></a>
+                            </ImagePreview>
+                        </ImagePreviewContainer>
+                    </Col>
+                </Row>
+                <RowCentered>
+                    <BigButton>
+                        <Link to="/gallery">Full Gallery</Link>
+                    </BigButton>
+                </RowCentered>
+            </Container>
 
             <PicturePopup
                 show={show}
