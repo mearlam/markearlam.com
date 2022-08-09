@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 import {Col, Container, Row} from "react-bootstrap";
 import styled from 'styled-components';
 import {BigButton, ImagePreviewContainer, ImagePreview} from "../components/StyledComponents";
+import InstagramFeed from "react-ig-feed";
+import InstagramEmbed from "react-instagram-embed";
 
 const Header = styled.header`
     text-align: center;
@@ -15,6 +17,7 @@ const RowCentered = styled(Row)`
     width: 100%;
     margin-top: 1em;
 `;
+
 
 function WhatsNew(props) {
 
@@ -36,6 +39,27 @@ function WhatsNew(props) {
                 <Row>
                     <Header><h2>What's New</h2></Header>
                 </Row>
+                <Row>
+                    wtf?
+                    <InstagramEmbed
+                        url='https://www.instagram.com/earlam.mark.art/'
+                        clientAccessToken='385064623334768|5d172bf18add9efedbf92c2d5f4598d5'
+                        maxWidth={320}
+                        hideCaption={false}
+                        containerTagName='div'
+                        protocol=''
+                        injectScript
+                        onLoading={() => {}}
+                        onSuccess={() => {}}
+                        onAfterRender={() => {}}
+                        onFailure={() => {}}
+                    />
+                </Row>
+                {/*<Row>*/}
+                {/*    <InstagramFeed*/}
+                {/*        token="IGQVJYVnAwX0V5RkQ3R3JCZAEFhSXZADa1A1WWpiS1BodUR2VHhSR3k2NDY5OU1aYkQ4Ums0TjBra04zcjZAac3pNdllXbXkwMVFFOXk1bFY1Tk9VR3RoOE0td1drOFg3bmRraF9OSFpObFAtX1VFRUxkaAZDZD"*/}
+                {/*        counter="6"/>*/}
+                {/*</Row>*/}
                 <Row>
                     <Col sm={6} md={6} lg={3} xl={3}>
                         <ImagePreviewContainer>
